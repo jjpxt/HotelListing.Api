@@ -1,5 +1,21 @@
 @HotelListing.Api_HostAddress = https://localhost:7000
 
+GET {{HotelListing.Api_HostAddress}}/api/hotels
+
+###
+
+POST {{HotelListing.Api_HostAddress}}/api/hotels
+Content-Type: application/json
+
+{
+  "Name":"Json Hotel",
+  "address": "yes sir st",
+  "rating": 3.7,
+  "countryId": 5
+}
+
+###
+
 GET {{HotelListing.Api_HostAddress}}/api/countries
 
 ###
@@ -9,43 +25,34 @@ Content-Type: application/json
 
 {
   
-  "Name": "Bostil",
-  "ShortName" :"Br"
+    "name": "Panama",
+    "shortName": "PN"
 }
 
 ###
 
-GET {{HotelListing.Api_HostAddress}}/api/hotels
-
-###
-
-POST {{HotelListing.Api_HostAddress}}/api/hotels
-Content-Type: application/json
-
-{
- 
-  "Name" :"Chopan Hotel",
-  "Adress" :"Copacabana Ave",
-  "Rating": 6.9,
-  "CountryId":3
-}
-
-###
-
-GET {{HotelListing.Api_HostAddress}}/api/hotels
-
-###
-
-POST {{HotelListing.Api_HostAddress}}/api/countries
-Content-Type: application/json
-
-{
-  //Country
-}
-
-###
-
-@id=3
+@id=5
 GET {{HotelListing.Api_HostAddress}}/api/countries/{{id}}
+
+###
+@id=8
+GET {{HotelListing.Api_HostAddress}}/api/hotels/{{id}}
+
+###
+@id=3
+PUT {{HotelListing.Api_HostAddress}}/api/hotels/{{id}}
+Content-Type: application/json
+
+{
+  "Id" : 3 ,
+  "Name":"Jesus Palace",
+  "address": "the lord ave",
+  "rating": 5,
+  "countryId": 4
+}
+
+###
+@id=3
+DELETE {{HotelListing.Api_HostAddress}}/api/hotels/{{id}}
 
 ###
