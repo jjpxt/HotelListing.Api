@@ -1,7 +1,17 @@
 @HotelListing.Api_HostAddress = https://localhost:7000
 
-GET {{HotelListing.Api_HostAddress}}/Hotels/
-Accept: application/json
+GET {{HotelListing.Api_HostAddress}}/api/countries
+
+###
+
+POST {{HotelListing.Api_HostAddress}}/api/countries
+Content-Type: application/json
+
+{
+  
+  "Name": "Bostil",
+  "ShortName" :"Br"
+}
 
 ###
 
@@ -9,39 +19,33 @@ GET {{HotelListing.Api_HostAddress}}/api/hotels
 
 ###
 
-@id=3
-GET {{HotelListing.Api_HostAddress}}/api/hotels/{{id}}
-
-###
-
-PUT {{HotelListing.Api_HostAddress}}/api/hotels/{{id}}
-Content-Type: application/json
-
-{
-  
-  "id": 3,
-  "name": "MGM Hotel",
-  "adress": "Main Ave",
-  "rating": 4.7
-
-}
-
-###
-
 POST {{HotelListing.Api_HostAddress}}/api/hotels
 Content-Type: application/json
 
 {
-    "id": 4,
-  "name": "Lolita's Hotel",
-  "adress": "Sex Ave",
-  "rating": 5
-
+ 
+  "Name" :"Chopan Hotel",
+  "Adress" :"Copacabana Ave",
+  "Rating": 6.9,
+  "CountryId":3
 }
 
 ###
 
-@id=4
-DELETE {{HotelListing.Api_HostAddress}}/api/hotels/{{id}}
+GET {{HotelListing.Api_HostAddress}}/api/hotels
+
+###
+
+POST {{HotelListing.Api_HostAddress}}/api/countries
+Content-Type: application/json
+
+{
+  //Country
+}
+
+###
+
+@id=3
+GET {{HotelListing.Api_HostAddress}}/api/countries/{{id}}
 
 ###
