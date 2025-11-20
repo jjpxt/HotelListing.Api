@@ -1,11 +1,19 @@
 using HotelListing.Api.Contracts;
 using HotelListing.Api.Data;
+using HotelListing.Api.MappingProfiles;
 using HotelListing.Api.Services;
+using Microsoft.CodeAnalysis.FlowAnalysis;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddAutoMapper(cfg =>
+{
+    cfg.AddProfile<CountryMappingProfile>();
+    cfg.AddProfile<HotelMappingProfile>();
+});
 
 builder.Services.AddControllers().AddJsonOptions(opt =>
 {

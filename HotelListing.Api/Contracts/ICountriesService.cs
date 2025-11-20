@@ -1,4 +1,5 @@
 ﻿using HotelListing.Api.DTOs.Country;
+using HotelListing.Api.Results;
 
 namespace HotelListing.Api.Contracts
 {
@@ -6,10 +7,10 @@ namespace HotelListing.Api.Contracts
     {
         Task<bool> CountryExistsAsync(int id);
         Task<bool> CountryExistsAsync(string name);
-        Task<GetCountryDto> CreateCountryAsync(CreateCoutryDto createDto);
-        Task DeleteCountryAsync(int id);
-        Task<IEnumerable<GetCountriesDto>> GetCountriesAsync();
-        Task<GetCountryDto?> GetCountryAsync(int id);
-        Task UpdateCountryAsync(int id, UpdateCountryDto updateDto);
+        Task<Result<GetCountryDto>> CreateCountryAsync(CreateCoutryDto createDto);
+        Task<Result> DeleteCountryAsync(int id);
+        Task<Result<IEnumerable<GetCountriesDto>>> GetCountriesAsync();
+        Task<Result<GetCountryDto>> GetCountryAsync(int id);
+        Task<Result> UpdateCountryAsync(int id, UpdateCountryDto updateDto);
     }
 }

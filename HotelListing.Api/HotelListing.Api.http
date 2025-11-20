@@ -1,33 +1,10 @@
 @HotelListing.Api_HostAddress = https://localhost:7000
 
-GET {{HotelListing.Api_HostAddress}}/api/hotels
-
-###
-
-POST {{HotelListing.Api_HostAddress}}/api/hotels
-Content-Type: application/json
-
-{
-  "Name":"Json Hotel",
-  "address": "yes sir st",
-  "rating": 3.7,
-  "countryId": 5
-}
-
-###
-
 GET {{HotelListing.Api_HostAddress}}/api/countries
 
 ###
 
-POST {{HotelListing.Api_HostAddress}}/api/countries
-Content-Type: application/json
-
-{
-  
-    "name": "Panama",
-    "shortName": "PN"
-}
+GET {{HotelListing.Api_HostAddress}}/api/hotels
 
 ###
 
@@ -35,28 +12,31 @@ Content-Type: application/json
 GET {{HotelListing.Api_HostAddress}}/api/countries/{{id}}
 
 ###
-@id=8
+@id=5
 GET {{HotelListing.Api_HostAddress}}/api/hotels/{{id}}
 
 ###
-@id=3
+
 PUT {{HotelListing.Api_HostAddress}}/api/hotels/{{id}}
 Content-Type: application/json
 
 {
-  "Id" : 3 ,
-  "Name":"Jesus Palace",
-  "address": "the lord ave",
-  "rating": 5,
-  "countryId": 4
+  "id": 5,
+  "Name" : "Israeli Hotel",
+  "Address" : "Bassora, Iraq",
+  "Rating" : 3.5,
+  "CountryId": 4
 }
 
 ###
 @id=3
-DELETE {{HotelListing.Api_HostAddress}}/api/hotels/{{id}}
+PUT {{HotelListing.Api_HostAddress}}/api/countries/{{id}}
+Content-Type: application/json
 
-###
-
-GET {{HotelListing.Api_HostAddress}}/api/countries
+{
+  "Id": 3,
+  "Name": "United States of America",
+  "ShortName": "USA"
+}
 
 ###
