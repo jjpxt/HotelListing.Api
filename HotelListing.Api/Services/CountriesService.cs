@@ -4,7 +4,6 @@ using HotelListing.Api.Constants;
 using HotelListing.Api.Contracts;
 using HotelListing.Api.Data;
 using HotelListing.Api.DTOs.Country;
-using HotelListing.Api.DTOs.Hotels;
 using HotelListing.Api.Results;
 using Microsoft.EntityFrameworkCore;
 

@@ -1,42 +1,65 @@
 @HotelListing.Api_HostAddress = https://localhost:7000
+@json = application/json
 
 GET {{HotelListing.Api_HostAddress}}/api/countries
-
+# X-Api-Key: {{apiKey}}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMTEzMjRiMC0wYjdlLTQ1MmEtOTliOS05YjA1N2U4MmQ2NGIiLCJlbWFpbCI6ImFkbWluQGxvY2FsaG9zdC5jb20iLCJqdGkiOiIyZDUwYzA3Ni01YmQxLTRiZTItYmE0OS0yMDZlOTkxNzI2YTAiLCJuYW1lIjoiTWFyc2VsbGlzLCBNYXVyaXRpdXMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzYzOTE3NjM2LCJpc3MiOiJIb3RlbExpc3RpbmdBUEkiLCJhdWQiOiJIb3RlbExpc3RpbmdBUElDbGllbnQifQ.2xkSwAsqNNc7IEwbrw5Qvm6R4UEpwFdoQwEMlMfaDg4
 ###
 
 GET {{HotelListing.Api_HostAddress}}/api/hotels
 
 ###
 
-@id=5
-GET {{HotelListing.Api_HostAddress}}/api/countries/{{id}}
-
-###
-@id=5
-GET {{HotelListing.Api_HostAddress}}/api/hotels/{{id}}
-
-###
-
-PUT {{HotelListing.Api_HostAddress}}/api/hotels/{{id}}
-Content-Type: application/json
+POST {{HotelListing.Api_HostAddress}}/api/auth/register
+Content-Type: {{json}}
 
 {
-  "id": 5,
-  "Name" : "Israeli Hotel",
-  "Address" : "Bassora, Iraq",
-  "Rating" : 3.5,
-  "CountryId": 4
+  "email" : "newuser@localhost.com",
+  "password" : "P@ssword1"
 }
 
 ###
-@id=3
-PUT {{HotelListing.Api_HostAddress}}/api/countries/{{id}}
+
+POST {{HotelListing.Api_HostAddress}}/api/auth/register
 Content-Type: application/json
 
 {
-  "Id": 3,
-  "Name": "United States of America",
-  "ShortName": "USA"
+  "email" : "admin@localhost.com",
+  "password" : "P@ssword1",
+  "FirstName": "Mauritius",
+  "LastName": "Marsellis",
+  "Role": "Administrator"
+}
+
+###
+
+POST {{HotelListing.Api_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email" : "admin@localhost.com",
+  "password" : "P@ssword1"
+}
+
+
+###
+
+POST {{HotelListing.Api_HostAddress}}/api/countries
+Content-Type: {{json}}
+
+{
+  
+  "name" : "Bosnia",
+  "shortName" : "BOS"
+}
+
+###
+
+POST {{HotelListing.Api_HostAddress}}/api/hotels
+Content-Type: application/json
+
+{
+  //CreateHotelDto
 }
 
 ###
